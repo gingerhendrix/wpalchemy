@@ -1,4 +1,4 @@
-This is a branch of WPAlchemy that will be used for embedding within other plugins.
+This is a branch of WPAlchemy that will be used for embedding within other plugins. You should clone this into a lib directory or similar.
 
 Basic reorganization of file structure so it can quickly be pulled into an existing project.
 
