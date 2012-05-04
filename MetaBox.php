@@ -1611,7 +1611,7 @@ class WPAlchemy_MetaBox
 	 * @since	1.0
 	 * @access	public
 	 */
-	function get_the_value($n = NULL, $collection = FALSE)
+	function get_the_value($n = NULL, $collection = FALSE, $escape_entities = TRUE)
 	{
 		$this->_meta(NULL, TRUE);
 
@@ -1673,8 +1673,11 @@ class WPAlchemy_MetaBox
 		{
 			if ($this->in_template)
 			{
-				return htmlentities($value, ENT_QUOTES, 'UTF-8');
-			}
+			  if($escape_entities){
+         return htmlentities($value, ENT_QUOTES, 'UTF-8');
+        }
+        return $value;
+      }
 			else
 			{
 				// http://wordpress.org/support/topic/call-function-called-by-embed-shortcode-direct
